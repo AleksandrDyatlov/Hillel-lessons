@@ -31,6 +31,14 @@ $media-expressions: (
 @import 'base/mixins';
 @import 'base/helpers';
 
+
+@import 'layout/common';
+
 body {
 	min-width: $base-min-width;
+	background-image: url("../images/bg.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #004183;
+	background-attachment: fixed;
 }

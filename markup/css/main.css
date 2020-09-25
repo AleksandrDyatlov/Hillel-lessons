@@ -10,6 +10,24 @@
   /* 2 */
   overflow: hidden; }
 
+img {
+  max-width: 100%;
+  height: auto; }
+
+.logo {
+  width: 200px;
+  margin: 0 auto 50px;
+  display: block; }
+
+.container {
+  background-color: rgba(255, 255, 255, 0.8);
+  min-height: 100vh; }
+
 body {
-  min-width: 320px; }
+  min-width: 320px;
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #004183;
+  background-attachment: fixed; }
 /*# sourceMappingURL=main.css.map */

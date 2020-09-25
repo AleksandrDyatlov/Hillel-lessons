@@ -1,2 +1,15 @@
-#main {
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.logo {
+	width: 200px;
+	margin: 0 auto 50px;
+	display: block;
+}
+
+.container {
+	background-color: rgba($white, .8);
+	min-height: 100vh;
 }
