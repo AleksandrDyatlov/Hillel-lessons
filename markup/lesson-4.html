@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Hillel Lessons</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js" defer><\/script>')</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" defer></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous" defer></script>
+	<script src="js/jquery.main.js" defer></script>
+</head>
+<body>
+	<div id="wrapper">
+		<main id="main">
+			<div class="container py-2">
+				<div>
+					<a class="btn btn-primary" href="index.html">&lt; Back to home</a>
+				</div>
+				<h1 class="text-primary text-center mb-5">Lesson 3 (Блочная модель)</h1>
+				<div>
+					<p><strong>SEO</strong> (Search engine optimization) - комплекс мероприятий направленных на поднятие позиции сайта в результатах выдачи поисковых систем.</p>
+					<p>SEO-оптимизация это отдельная отрасль со своими специалистами. Большинство мероприятий направленных на поднятие позиции сайта осуществляется после запуска сайта и связано с дополнительным вложением средств. Мы этим не занимаемся.</p>
+					<p>Наша задача будет сводиться лишь к тому чтобы придерживаться базовых принципов семантической верстки при порезке страницы:</p>
+					<ol>
+						<li>Применять HTML-теги по прямому назначению;</li>
+						<li>Расставлять заголовки в правильном порядке;</li>
+					</ol>
+					<p></p>
+					<p></p>
+					<p>HTML5 - это новая версия языка HTML, которая нам принесла:</p>
+					<ul>
+						<li>новый doctype;</li>
+						<li>новые элементы html;</li>
+						<li>новые атрибуты;</li>
+						<li>поддержку аудио и видео;</li>
+						<li>полную поддержку CSS3;</li>
+						<li>2D\3D графику;</li>
+					</ul>
+					<p>Одна из основных задач HTML5 - добавление логики общей разметке HTML-страниц с целью упрощения программного анализа сайтов. В предыдущих стандартах для общей разметки страницы использовались теги <code>&lt;div&gt;</code>, которые не несут логической нагрузки, поэтому не было никакой возможности сделать блок header отличимым от блока content для программного анализа. В HTML5 для подобных целей используются специальные теги, которые в отличии от <code>&lt;div&gt;</code> несут и логическую нагрузку. Например теги: <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;aside&gt;</code> и т.д.</p>
+					<table class="table table-bordered table-striped table-dark">
+						<tbody>
+							<tr class="bg-success"><th>тег</th><th>атрибуты</th><th>тип</th><th>описание</th></tr>
+							<tr>
+								<td>main</td>
+								<td></td>
+								<td>grouping</td>
+								<td>основной контент на странице; замена &lt;div id="main"&gt; или &lt;div id="content"&gt;; один на страницу</td>
+							</tr>
+							<tr>
+								<td>section</td>
+								<td>&nbsp;</td>
+								<td>section</td>
+								<td>тематически сгруппированный контент, обычно с заголовком; логическая часть документа или статьи</td>
+							</tr>
+							<tr>
+								<td>article</td>
+								<td>&nbsp;</td>
+								<td>section</td>
+								<td>самостоятельная независимая часть документа, которая может легко распространяться (участвовать в рассылке) или быть повторно использованной на другом ресурсе (перепощена). Статья должна иметь смысл сама по себе и должна иметь возможность распространять ее независимо от остальной части сайта. Этот элемент задает содержание сайта вроде новости, статьи, записи блога, форума или др.</td>
+							</tr>
+							<tr>
+								<td>aside</td>
+								<td>&nbsp;</td>
+								<td>section</td>
+								<td>раздел страницы с дополнительным контентом, который косвенно относится к основному содержимому статьи или документа (зависит от того, во что вложен aside); сайдбар всего документа или дополнительная информация в статье\секции</td>
+							</tr>
+							<tr>
+								<td>header</td>
+								<td>&nbsp;</td>
+								<td>section</td>
+								<td>группа вступительных и навигационных элементов; обычно содержит заголовок; может содержать также логотипы, форму поиска, список содержимого; header документа\статьи\секции</td>
+							</tr>
+							<tr>
+								<td>footer</td>
+								<td>&nbsp;</td>
+								<td>section</td>
+								<td>колонтитул для ближайшего родителя; обычно содержит мета информацию, информацию об авторе, ссылки на соотносящиеся документы, копирайт; footer документа\статьи\секции</td>
+							</tr>
+							<tr>
+								<td>nav</td>
+								<td>&nbsp;</td>
+								<td>section</td>
+								<td>секция с навигационными ссылками; может иметь свой заголовок</td>
+							</tr>
+							<tr>
+								<td>figure</td>
+								<td>&nbsp;</td>
+								<td>grouping</td>
+								<td>самодостаточный контент, возможно с подписью, который ссылается на основное содержимое но при этом может быть легко перемещен по странице без потери смысла.</td>
+							</tr>
+							<tr>
+								<td>figcaption</td>
+								<td>&nbsp;</td>
+								<td>grouping</td>
+								<td>подпись к элементу figure</td>
+							</tr>
+							<tr>
+								<td>audio</td>
+								<td>&nbsp;</td>
+								<td>embedded</td>
+								<td>элемент для интеграции аудио</td>
+							</tr>
+							<tr>
+								<td>video</td>
+								<td>&nbsp;</td>
+								<td>embedded</td>
+								<td>элемент для интеграции видео</td>
+							</tr>
+							<tr>
+								<td>source</td>
+								<td>&nbsp;</td>
+								<td>embedded</td>
+								<td>источник видео или аудио, используется внутри соответствующих тегов.</td>
+							</tr>
+							<tr>
+								<td>time</td>
+								<td>datetime="2009-11-13"</td>
+								<td>text</td>
+								<td>выделяет дату или время на странице, атрибут datetime должен содержать дату в правильном машинном формате</td>
+							</tr>
+							<tr>
+								<td>mark</td>
+								<td>&nbsp;</td>
+								<td>text</td>
+								<td>текст, выделенный цветом или любым другим способом</td>
+							</tr>
+							<tr>
+								<td>input</td>
+								<td>type="email"</td>
+								<td>forms</td>
+								<td>выглядит как текстовое поле; валидирует введенные email адреса</td>
+							</tr>
+							<tr>
+								<td>input</td>
+								<td>type="tel"</td>
+								<td>forms</td>
+								<td>выглядит как текстовое поле; валидирует введенные телефонные номера; переключает набор символов на мобильной клавиатуре</td>
+							</tr>
+							<tr>
+								<td>input</td>
+								<td>type="url"</td>
+								<td>forms</td>
+								<td>выглядит как текстовое поле; валидирует введенные web адреса; подставляет http://</td>
+							</tr>
+							<tr>
+								<td>input</td>
+								<td>type="search"</td>
+								<td>forms</td>
+								<td>выглядит как текстовое поле; позволяет очистить поле по клику на крестик</td>
+							</tr>
+							<tr>
+								<td>input</td>
+								<td>placeholder=""</td>
+								<td>forms</td>
+								<td>определяет значение по умолчанию для текстовых полей формы;</td>
+							</tr>
+						</tbody>
+					</table>
+					<p></p>
+					<p></p>
+					<img src="images/html5_sectioning_high_level.jpg" alt="image description">
+					<p></p>
+					<img src="images/html5_sectioning_specific_post.jpg" alt="image description">
+				</div>
+				<div class="text-center mb-3">
+					<h4>Home work</h4>
+					<a href="https://zpl.io/VDZyope">Cherry sm link</a>
+					<p></p>
+					<img src="images/layout.png" alt="image description">
+				</div>
+				<div>
+					<a class="btn btn-primary" href="index.html">&lt; Back to home</a>
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+</html>
