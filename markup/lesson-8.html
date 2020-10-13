@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Hillel Lessons</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js" defer><\/script>')</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" defer></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous" defer></script>
+	<script src="js/jquery.main.js" defer></script>
+</head>
+<body>
+	<div id="wrapper">
+		<main id="main">
+			<div class="container py-2 bg-light">
+				<div>
+					<a class="btn btn-primary" href="index.html">&lt; Back to home</a>
+				</div>
+				<h1 class="text-primary text-center mb-5">Lesson 8 (Формы)</h1>
+				<div>
+					<h1 align="center">Формы</h1>
+
+<h2>Типы инпутов / Поля ввода информации</h2>
+<form action="" method="">
+  <input type="text" autocomplete="on" name="имя" placeholder="Имя" autofocus>
+  <hr>
+  <input type="password" name="пароль" value="" min="4" maxlength="10" >
+  <hr>
+
+  <h3>html 5</h3>
+
+  <input type="email" name="эмейл" pattern="" >
+  <hr>
+  <input type="url" name="вебсайт">
+  <hr>
+  <input type="number" name="цена" pattern="" min="10" max="20">
+  <hr>
+  <input type="tel" name="телефон">
+  <hr>
+  <input type="search" name="поиск">
+  <hr>
+  <input type="date" name="дата">
+  <hr>
+  <input type="time" name="время">
+  <hr>
+  <input type="week" name="недели">
+  <hr>
+  <input type="month" name="месяц">
+  <hr>
+
+
+  <input type="color" name="цвет">
+  <hr>
+  <input type="range" name="диапазон" min="0" max="100" value="90" step="1">
+  <hr>
+  <input type="hidden" name="скрытое поле" value="текст">
+  <hr>
+  <input type="file" name="файл" accept="image/jpeg,image/png,image/*">
+  <hr>
+
+
+  <input type="reset" value="Отправить">
+  
+  <button type="submit"> Отправить</button>
+
+
+</form>
+<hr>
+<h2>Аттрибуты формы полей</h2>
+<ul class="list-column-3">
+  <li>disabled</li>
+  <li>readonly</li>
+  <li>placeholder</li>
+  <li>required</li>
+  <li>accept</li>
+  <li>autocomplete</li>
+  <li>autofocus</li>
+  <li>formnovalidate</li>
+  <li>max</li>
+  <li>maxlength</li>
+  <li>min</li>
+  <li>pattern</li>
+  <li>step</li>
+  <li>tabindex</li>
+  <li>checked</li>
+</ul>
+
+
+<hr>
+
+<h2>Многострочное поле ввода</h2>
+
+<form action="" method="">
+  <textarea name="comment" id="comment" cols="30" rows="10">
+    Добавьте сюда свой комментарий
+  </textarea>
+  <button type="submit"> Отправить</button>
+</form>
+
+<hr>
+
+<h2>Поля множественного выбора и меню</h2>
+
+<form action="" method="">
+  <input type="checkbox" name="day" value="Friday"> Пятница
+  <input type="checkbox" name="day" value="Saturday" checked> Суббота
+  <input type="checkbox" name="day" value="Sunday"> Воскресенье
+
+  <hr>
+
+  <input type="radio" name="day" value="Friday" > Пятница
+  <input type="radio" name="day" value="Saturday" checked> Суббота
+  <input type="radio" name="day" value="Sunday"> Воскресенье
+
+  <hr>
+
+  <select name="day">
+    <option value="Friday" >Пятница</option>
+    <option value="Saturday " selected>Суббота</option>
+    <option value="Sunday">Воскресенье</option>
+  </select>
+
+  <hr>
+
+  <h3>Множественный селектор</h3>
+
+  <select name="day" multiple size="4">
+    <option value="Friday" >Пятница</option>
+    <option value="Saturday" selected>Суббота</option>
+    <option value="Sunday">Воскресенье</option>
+  </select>
+  <hr>
+  <h3>Группировка селектор</h3>
+  <select name="variants">
+    <optgroup label="Группа вариантов 1">
+      <option value="1">Вариант 1</option>
+      <option value="2">Вариант 2</option>
+      <option value="3">Вариант 3</option>
+    </optgroup>
+    <optgroup label="Группа вариантов 2">
+      <option value="4">Вариант 4</option>
+      <option value="5">Вариант 5</option>
+      <option value="6">Вариант 6</option>
+    </optgroup>
+  </select>
+</form>
+
+<hr>
+<h2>Организация форм.</h2>
+
+<form action="">
+  <fieldset>
+    <legend>Вход в систему</legend>
+
+    <label>
+      Имя пользователя
+      <input type="text" name="username">
+    </label>
+
+    <label>
+      Пароль
+      <input type="text" name="password">
+    </label>
+  </fieldset>
+  <hr>
+  
+  <label>
+    <input type="radio" name="day" value="Friday" checked> Пятница
+  </label>
+  <label>
+    <input type="radio" name="day" value="Saturday"> Суббота
+  </label>
+  <label>
+    <input type="radio" name="day" value="Sunday"> Воскресенье
+  </label>
+  <hr>
+  <label for="userName">Имя пользователя</label>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, voluptas.</p>
+  <input type="text" id="userName" value="это я" >
+
+</form>
+<hr>
+<h2>Список возможных значений</h2>
+
+<form action="">
+  <input type="text" name="week" list="product">
+  <datalist id="product">
+    <option value="Мясо"></option>
+    <option value="Мяксо"></option>
+    <option value="Мясищще"></option>
+    <option value="Рыба"></option>
+    <option value="Курочка"></option>
+  </datalist>
+</form>
+
+
+<div class="height"></div>
+
+				</div>
+				<div class="text-center mb-3">
+					<h4>Home work</h4>
+					<img src="images/form-dz.png" alt="image description">
+				</div>
+				<div>
+					<a class="btn btn-primary" href="index.html">&lt; Back to home</a>
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+</html>

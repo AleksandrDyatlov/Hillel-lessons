@@ -42,3 +42,20 @@ body {
 	background-color: #004183;
 	background-attachment: fixed;
 }
+
+
+.row {
+	margin: 0 -8px;
+}
+
+.row::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.col {
+	float: left;
+	width: 33.33%;
+	padding: 0 8px;
+}
