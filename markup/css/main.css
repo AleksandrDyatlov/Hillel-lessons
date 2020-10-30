@@ -23,6 +23,12 @@ img {
   background-color: rgba(255, 255, 255, 0.8);
   min-height: 100vh; }
 
+.git-list img {
+  max-width: 1000px;
+  display: block;
+  width: 100%;
+  margin: 0 auto; }
+
 body {
   min-width: 320px;
   background-image: url("../images/bg.jpg");
@@ -30,4 +36,17 @@ body {
   background-repeat: no-repeat;
   background-color: #004183;
   background-attachment: fixed; }
+
+.row {
+  margin: 0 -8px; }
+
+.row::after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.col {
+  float: left;
+  width: 33.33%;
+  padding: 0 8px; }
 /*# sourceMappingURL=main.css.map */

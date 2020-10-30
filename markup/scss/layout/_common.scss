@@ -13,3 +13,12 @@ img {
 	background-color: rgba($white, .8);
 	min-height: 100vh;
 }
+
+.git-list {
+	img {
+		max-width: 1000px;
+		display: block;
+		width: 100%;
+		margin: 0 auto;
+	}
+}
