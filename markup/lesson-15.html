@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Hillel Lessons</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js" defer><\/script>')</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" defer></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous" defer></script>
+	<script src="js/jquery.main.js" defer></script>
+</head>
+<body>
+	<div id="wrapper">
+		<main id="main">
+			<div class="container py-2 bg-dark text-white">
+				<div>
+					<a class="btn btn-primary" href="index.html">&lt; Back to home</a>
+				</div>
+				<h1 class="text-primary text-center mb-5">Lesson 15 (SCSS)</h1>
+				<p><a href="https://sass-scss.ru/">SCSS</a></p>
+				<p>Sass - это динамический язык для создания каскадных таблиц стиля (CSS). Также Sass называют CSS-препроцессором или препроцессорным языком. Он позволяет сделать разработку CSS более быстрой, простой и удобной.</p>
+				<p>Sass вводит переменные, операции, функции и миксины (примешивания).</p>
+				<p>Разработка на Sass удобна тем, что код становится более структурированным и гибким.</p>
+				<p>Чтобы использовать Sass(SCSS) код в проекте, его нужно преобразовать (скомпилировать) в CSS код.</p>
+				<p>Компилировать можно только с помощью специальных программ (Prepros App) или используя компиляторы, которые выполняются в командной строке.</p>
+				<p>Итак, код разрабатывается на SCSS, но затем файл компилируется в CSS файл и подключается в HTML.</p>
+				<p></p>
+				<hr>
+				<p>В main.scss импортируем все остальные SCSS файлы:</p>
+<pre>
+<code>
+@import 'components/normalize';
+</code>
+</pre>
+				<p>Порядок подключения очень важен: сначала переменные, потом миксины потом все остальное.</p>
+				<p>Нижнее подчеркивание и расширение файла указывать не нужно.</p>
+				<p>Нижнее подчеркивание в имени файла это инструкция компилятору, что этот файл не нужно компилировать отдельно.</p>
+				<h4 class="text-warning">Переменные</h4>
+				<p>Переменные позволяют сохранить постоянно используемые значения в одном месте, а затем повторно использовать их в любом месте таблицы стилей, что облегчает внесение глобальных изменений до изменения одной строки кода.</p>
+				<p>В SCSS переменная объявляется с помощью символа $, при этом имя переменной и ее значение отделяются друг от друга двоеточием так, как это делается в CSS:</p>
+<pre>
+<code>
+$main-color: #0982c1;
+$site-width: 1024px;
+$border-style: dotted;
+body {
+  color: $main-color;
+  border: 1px $border-style $main-color;
+  max-width: $site-width;
+}</code>
+</pre>
+				<h4 class="text-warning">Математические операции</h4>
+				<p>SCSS позволяет проводить вычисления прямо в CSS.</p>
+				<p>SCSS поддерживает следующие операторы +, -, *, / и %. При этом операторы + работает как сложение так и как соединение строк.</p>
+<pre>
+<code>
+$max-width: 960px;
+$base-font-size: 14px;
+$heading-font-size: ($base-font-size + 10);
+ 
+.heading h1{
+  font-size: $heading-font-size;
+}
+.aside{
+  width: (300px / $max-width * 100%);
+}
+</code>
+</pre>
+				<h4 class="text-warning">Parent and root selector</h4>
+				<p>Cимвол "&" вначале строки является ссылкой на родительский элемент</p>
+				<div class="row">
+					<div class="col">
+						<p>SCSS</p>
+<pre>
+<code>
+li {
+  float: left;
+  & + & {
+    pading-left: 20px;
+  }
+}
+ 
+ 
+a {
+  color: red;
+  &:hover {
+    color: white;
+  }
+}
+</code>
+</pre>
+					</div>
+					<div class="col">
+						<p>CSS</p>
+<pre>
+<code>
+li {
+  float: left;
+}
+li + li {
+  pading-left: 20px;
+}
+ 
+ 
+a {
+  color: red;
+}
+a:hover {
+  color: white;
+}
+</code>
+</pre>
+					</div>
+				</div>
+				<p>Cимвол "&" в конце строки заменяет цепочку селекторов начиная с корнево элемента.</p>
+				<div class="row">
+					<div class="col">
+						<p>SCSS</p>
+<pre>
+<code>
+.header {
+  background: $black;
+  .holder {
+    padding: 20px 0;
+      .home-page & {
+        padding: 40px 0;
+      }
+    }
+  }
+}
+</code>
+</pre>
+					</div>
+					<div class="col">
+						<p>CSS</p>
+<pre>
+<code>
+.header {
+  background: $black;
+}
+#header .holder {
+  padding: 20px 0;
+}
+.home-page #header .holder{
+  padding: 40px 0;
+}
+</code>
+</pre>
+					</div>
+				</div>
+				<h4 class="text-warning">Операции с цветом</h4>
+				<p>Встроенные функции для работы с цветом <strong>darken()</strong> и <strong>lighten()</strong> позволяют легко создавать hover-эффекты на свой вкус:</p>
+<pre>
+<code>
+a{
+  color: $base-link-color;
+  &:hover, &:active, &:focus {
+    color: lighten($base-link-color, 30%);
+    text-decoration: none;
+  }
+}
+textarea {
+  margin: 0;
+  padding: 4px 7px;
+  border: 1px solid $base-input-border-color;
+  &:focus {
+    border-color: darken($base-input-border-color, 30%); 
+  }
+}
+</code>
+</pre>
+				<h4 class="texct-warning">Наследование</h4>
+				<p>Kоманда <code>@extend</code> позволяет наследовать свойства одного класса в другой.</p>
+<pre>
+<code>
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+ 
+.success {
+  @extend .message;
+  border-color: green;
+}
+ 
+.error {
+  @extend .message;
+  border-color: red;
+}
+</code>
+</pre>
+				<p>Такой метод позволяет как использовать оригинальный класс в HTML так и создавать на его основе новые классы в CSS.</p>
+				<h4 class="text-warning">Служебные классы</h4>
+				<p>Позволяют запоминать и повторно использовать целые наборы свойств. Служебные классы объявляются с помощью <code>%</code>:</p>
+<pre>
+<code>
+// reset for list
+%listreset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ 
+#nav {
+  @extend %listreset;
+  float:left;
+}
+</code>
+</pre>
+				<p>Служебные классы не переносятся в CSS:</p>
+<pre>
+<code>
+#nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ 
+#nav {
+  float: left;
+}
+</code>
+</pre>
+				<h4 class="text-warning">Миксины (примешивания)</h4>
+				<p>Миксины позволяют повторно использовать целые фрагменты SCSS кода и при необходимости даже передавать им аргументы. И что немаловажно, вы также можете указывать их значения по умолчанию.</p>
+				<p>Для объявления миксин используйте ключевое слово <code>@mixin</code>, а после него укажите выбранное вами имя миксина. Если есть необходимость в аргументах, то перечислите их в круглых скобках. Значения, устанавливаемые для аргумента по умолчанию, указываются при определении миксины через двоеточие.</p>
+				<p>Вызов (применение) миксины осуществляется ключевым словом <code>@include</code> после которого указывается имя миксины и опционально перечисляются в скобках необходимые параметры.</p>
+				<div class="row">
+					<div class="col">
+						<p>SCSS</p>
+<pre>
+<code>
+@mixin make-box($bg: $white) {
+  border-radius: 10px;
+  padding: 15px;
+  background: $bg;
+  margin-bottom: $base-v-spacing;
+}
+.intro {
+    @include make-box;
+}
+.news {
+    @include make-box ($light-blue);
+}
+</code>
+</pre>
+					</div>
+					<div class="col">
+						<p>CSS</p>
+<pre>
+<code>
+.intro {
+  border-radius: 10px;
+  padding: 15px;
+  background: #fff;
+  margin-bottom: 20px;
+}
+.news {
+  border-radius: 10px;
+  padding: 15px;
+  background: #00c;
+  margin-bottom: 20px;
+}
+</code>
+</pre>
+					</div>
+				</div>
+				<p>Миксины не переносятся в CSS, т.о. миксины это более гибкий вариант служебных классов.</p>
+				<p>Создавайте миксины и служебные классы чтобы избавиться от повторения кода и вендорных префиксов. Не делайте миксины с кучей параметров. Они должны быть простыми и понятными. Всегда создавайте комментарий с описанием для своих миксин</p>
+				<h4 class="text-warning">Комментарии</h4>
+				<p>SCSS придерживается привычного для CSS стиля комментариев:</p>
+<pre>
+<code>
+/* Hello, I'm a css style comment */
+.class{color: black;}
+</code>
+</pre>
+				<p>В SCSS также возможны однострочные комментарии, они считаются служебными, и не появляются в итоговом, скомпилированном выводе CSS:</p>
+<pre>
+<code>
+// Hi, I'm a silent comment, I won't show up in your css
+.class{color: white;}
+</code>
+</pre>
+				<h4 class="text-warning">Циклы</h4>
+				<p>При умелом использовании циклы могут сильно сократить количество набираемого кода. Например при создании гридов:</p>
+				<div class="row">
+					<div class="col">
+						<p>SCSS</p>
+<pre>
+<code>
+$columns: 12;
+$gutter: 30px;
+ 
+@for $i from 1 through $columns {
+    .col-#{$i} {
+        width: percentage(1 / $i);
+        padding: 0 ($gutter / 2);
+    }
+}
+</code>
+</pre>
+					</div>
+					<div class="col">
+						<p>CSS</p>
+<pre>
+<code>
+.col-1 {
+  width: 100%;
+  padding: 0 15px;
+}
+ 
+.col-2 {
+  width: 50%;
+  padding: 0 15px;
+}
+ 
+.col-3 {
+  width: 33.33333333%;
+  padding: 0 15px;
+}
+ 
+...
+ 
+.col-12 {
+  width: 8.33333333%;
+  padding: 0 15px;
+}
+</code>
+</pre>
+					</div>
+				</div>
+				<p>Или вот такой перебор списка:</p>
+				<div class="row">
+					<div class="col">
+						<p>SCSS</p>
+<pre>
+<code>
+@each $social-network in (facebook, youtube, flickr) {
+  .#{$social-network} a {
+    background-image: url('/images/ico-#{$social-network}.png');
+    ...
+  }
+}
+</code>
+</pre>
+					</div>
+					<div class="col">
+						<p>CSS</p>
+<pre>
+<code>
+.facebook a {
+  background-image: url("/images/ico-facebook.png");
+  ...
+}
+ 
+.youtube a {
+  background-image: url("/images/ico-youtube.png");
+  ...
+}
+ 
+.flickr a {
+  background-image: url("/images/ico-flickr.png");
+  ...
+}
+</code>
+</pre>
+					</div>
+				</div>
+				<h4 class="text-warning">SCSS + Responsive</h4>
+				<p>SCSS позволяет вкладывать медиа-запросы внутрь CSS-правил, т.о. свойства элемента для всех девайсов записываются в одном месте. Для написания медиа-развилок мы будем использовать миксину <a href="https://eduardoboucas.github.io/include-media/#download">@media()</a>.</p>
+				<p>Пример записи свойств для мобильных устройств:</p>
+				<div class="row">
+					<div class="col">
+						<p>SCSS</p>
+<pre>
+<code>
+.sidebar {
+  width: 300px;
+  float:left;
+  @include media('&lt;tablet') {
+    width: 100%;
+    float:none;
+  }
+}
+</code>
+</pre>
+					</div>
+					<div class="col">
+						<p>CSS</p>
+<pre>
+<code>
+.sidebar {
+  width: 300px;
+  float:left;
+}
+@media ( max-width:767px ) {
+  .sidebar {
+    width: 100%;
+    float:none;
+  }
+}
+</code>
+</pre>
+					</div>
+				</div>
+				<p>Компилятор SCSS также легко обрабатывает вложенные медиа-запросы:</p>
+				<div class="row">
+					<div class="col">
+						<p>SCSS</p>
+<pre>
+<code>
+.icon {
+    background: url(../images/icon.png) no-repeat;
+ 
+    @include breakpoint('&lt;tablet') {
+        background: url(../images/icon-sm.png) no-repeat;
+ 
+        @include breakpoint('retina2x') {
+            background: url(../images/icon-sm-2x.png) no-repeat;
+        }
+    }
+}
+</code>
+</pre>
+					</div>
+					<div class="col">
+						<p>CSS</p>
+<pre>
+<code>
+.icon {
+  background: url(../images/icon.png) no-repeat;
+}
+@media (max-width: 767px) {
+  .icon {
+    background: url(../images/icon-sm.png) no-repeat;
+  }
+}
+@media (max-width: 767px) and (min-resolution: 144dpi), 
+       (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5) {
+  .icon {
+    background: url(../images/icon-sm-2x.png) no-repeat;
+  }
+}
+</code>
+</pre>
+					</div>
+				</div>
+				<p>Media breakpoints</p>
+<pre>
+<code>
+$breakpoints: (
+	'xs-phone': 320px,
+	'phone': 576px,
+	'tablet': 768px,
+	'desktop': 992px,
+	'widescreen': 1200px
+);
+
+// keywords
+$media-expressions: (
+	'screen': 'screen',
+	'print': 'print',
+	'handheld': 'handheld',
+	'landscape': '(orientation: landscape)',
+	'portrait': '(orientation: portrait)',
+	'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+	'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// ligatured operators ≥ ≤
+</code>
+</pre>
+				<div class="text-center mb-3">
+					<h4>Home work</h4>
+					<p>0</p>
+				</div>
+				<div>
+					<a class="btn btn-primary" href="index.html">&lt; Back to home</a>
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+</html>
