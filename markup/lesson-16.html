@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Hillel Lessons</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js" defer><\/script>')</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" defer></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous" defer></script>
+	<script src="js/jquery.main.js" defer></script>
+</head>
+<body>
+	<div id="wrapper">
+		<main id="main">
+			<div class="container py-2">
+				<div>
+					<a class="btn btn-primary" href="index.html">&lt; Back to home</a>
+				</div>
+				<h1 class="text-primary text-center mb-5">Lesson 16 (SCSS part 2)</h1>
+				<p>Таск-менеджер Grunt/Gulp — нужен для автоматического выполнения часто используемых задач, написанный на языке программирования JavaScript.</p>
+				<p>По этой статье можно собрать свои сборки</p>
+				<ul>
+					<li><a href="https://frontender.info/grunt-is-not-weird-and-hard/#note-2">Grunt npm</a></li>
+					<li><a href="https://habr.com/ru/post/250569/">Gulp npm</a></li>
+				</ul>
+<pre>
+<code>
+$(document).ready(function () { // Сюда помещаем все наши скрипты
+ $('.наш класс по которому делаем клик').on('click', function(e) {
+    e.preventDefault() // отменаят стандартное повередие элемента к примеру a,button
+  $('.элемент на который добавляем или убераем класс').toggleClass('класс кторый будем добавлять, без точки в начале');
+ })
+});
+</code>
+</pre>
+				<p>Пример burger кнопки</p>
+<pre>
+<code>
+.nav-opener {
+  float: right;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, .5);
+  position: relative;
+  border-radius: 3px;
+ 
+  &:hover {
+    opacity: .9;
+  }
+ 
+  .nav-active & {
+    span {
+      opacity: 0;
+    }
+
+    &::before,
+    &::after {
+      transform: rotate(45deg);
+      top: 50%;
+      left: 15%;
+      right: 15%;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+ 
+  span,
+  &::before,
+  &::after {
+    background: #fff;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    right: 25%;
+    height: 4px;
+    margin-top: -2px;
+    transition: all .3s linear;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    top: 30%;
+  }
+
+  &::after {
+    top: 70%;
+  }
+}
+</code>
+</pre>
+				<p><img src="images/burger.png" alt="image description"></p>
+				<div class="text-center mb-3">
+					<h4>Home work</h4>
+					<p>0</p>
+				</div>
+				<div>
+					<a class="btn btn-primary" href="index.html">&lt; Back to home</a>
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+</html>
